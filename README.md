@@ -1,18 +1,15 @@
 # fae-authoring-a-calculator
 
-The smallest complete [FAE](../fae) experiment. Coding agents write a
-two-operand calculator (`<a> <op> <b>` on stdin, the result on stdout) in
-three languages: Python, Zig and Brainfuck. FAE measures how many attempts
-each agent needs to get it right in each language.
+An example experiment built with [FAE](https://github.com/orglnte/fae):
+coding agents write a calculator in Python, Zig and Brainfuck, and the
+experiment counts the attempts each needs to get it right.
 
-The task is trivial on purpose: every part of an experiment is here and
-small enough to read in one sitting. For a comparison that answers a real
-design question, see [fae-terraform-vs-pulumi](../fae-terraform-vs-pulumi).
+A bigger example: [fae-terraform-vs-pulumi](https://github.com/orglnte/fae-terraform-vs-pulumi).
 
 ## Run it
 
-You need Python 3.11+ with `typer` and `ujson`, docker, and the FAE engine
-checked out beside this repo (`../fae`, or set `FAE_DIR`).
+You need Python 3.11+ with `typer` and `ujson`, docker, and [FAE](https://github.com/orglnte/fae)
+cloned beside this repo (`../fae`, or set `FAE_DIR`).
 
 ```sh
 python3 cli.py rig init       # writes fae.toml, the machine-local config
@@ -80,4 +77,4 @@ missing runtime image halts the cell before an attempt is spent (exit 45,
 nothing charged).
 
 Building an experiment like this one from an empty directory, step by
-step: the FAE [HOWTO](../fae/HOWTO.md).
+step: the FAE [HOWTO](https://github.com/orglnte/fae/blob/main/HOWTO.md).
