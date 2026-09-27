@@ -106,7 +106,8 @@ class TestPython(CalculatorCase):
         self.assertTrue((art / "docs" / "python.md").is_file())
         self.assertTrue(os.access(art / "calc.py", os.W_OK))
         self.assertFalse(os.access(art / "README.md", os.W_OK))
-        self.assertTrue((self.ws / self.cid("python") / "arrangements" / "01-seed" / "verify.log").is_file())
+        runs = sorted((self.ws / self.cid("python") / "arrangements").glob("01-a*-seed-green"))
+        self.assertTrue((runs[0] / "verify.log").is_file())
         self.assertTrue((self.ws / self.cid("python") / "run" / "calc.py").is_file())
         self.assertEqual(subprocess.run(["docker", "ps", "-aq", "--filter", f"name=fae-calc-{self.cid('python')}"],
                                         capture_output=True, text=True).stdout.strip(), "")
