@@ -8,6 +8,6 @@ class Python(Sandboxed):
     ARM = "python"
     TECH = "python"
     CONDITIONS = ("apidocs",)
-    AUTHORABLE = (("calc.py",), ())
+    AUTHORING_SURFACE = (("calc.py",), ())
     IMAGE = "python:3.12.3-slim"
     RUN = ("python3", "calc.py")

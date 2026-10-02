@@ -10,7 +10,7 @@ class Zig(Sandboxed):
     ARM = "zig"
     TECH = "zig"
     CONDITIONS = ("apidocs",)
-    AUTHORABLE = (("calc.zig",), ())
+    AUTHORING_SURFACE = (("calc.zig",), ())
     IMAGE = "tangowithfoxtrot/zig:0.13.0"
     BUILD = ("/zig/zig", "build-exe", "calc.zig", "-femit-bin=calc", "-OReleaseSafe")   # scratch image: zig is not on PATH
     RUN = ("./calc",)

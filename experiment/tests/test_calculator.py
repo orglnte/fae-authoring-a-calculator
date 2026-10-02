@@ -164,7 +164,7 @@ class TestTheExampleIsSelfContained(unittest.TestCase):
     def test_the_definition_declares_what_the_engine_reads(self):
         prog = ("import sys; sys.path.insert(0, %r)\nfrom fae.cell import experiment as exp\n"
                 "d = exp.load(%r)\nprint(d.name, d.arms, sorted(d.matrix.items()), d.gate.arity, d.exclusive, "
-                "d.variant('zig').AUTHORABLE, d.variant('zig').BUILD[:2], d.verifier_class().__name__)"
+                "d.variant('zig').AUTHORING_SURFACE, d.variant('zig').BUILD[:2], d.verifier_class().__name__)"
                 % (str(ENGINE), str(CALC)))
         r = subprocess.run([sys.executable, "-c", prog], capture_output=True, text=True)
         self.assertEqual(r.stdout.strip(),

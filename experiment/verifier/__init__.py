@@ -65,7 +65,7 @@ class CalculatorVerifier(Verifier):
             if variant is None:
                 f.write(f"FAIL[deploy]: no variant named {ctx.variant!r}\n")
                 return done(False, "deploy", f"no variant {ctx.variant!r}")
-            program = variant.AUTHORABLE[0][0]
+            program = variant.AUTHORING_SURFACE[0][0]
             if not (artifacts / program).is_file():
                 f.write(f"FAIL[deploy]: no {program} in the workspace\n")
                 return done(False, "deploy", f"no {program}")

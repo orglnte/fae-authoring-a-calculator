@@ -11,6 +11,6 @@ class Brainfuck(Sandboxed):
     ARM = "brainfuck"
     TECH = "brainfuck"
     CONDITIONS = ("apidocs",)
-    AUTHORABLE = (("calc.bf",), ())
+    AUTHORING_SURFACE = (("calc.bf",), ())
     RUNTIME_DIR = Path(__file__).resolve().parent / "runtime"
     RUN = ("bfi", "-b32", "-z", "calc.bf")
