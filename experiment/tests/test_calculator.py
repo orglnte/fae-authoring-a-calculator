@@ -20,6 +20,7 @@ def REF(tech):
 from experiment.variants import Brainfuck, Python, Zig  # noqa: E402
 from experiment.verifier import CalculatorVerifier  # noqa: E402
 from fae.cell import image as _image  # noqa: E402
+from fae.cell.verify import RUN_OUT  # noqa: E402
 
 
 class TestTheDeclaredImage(unittest.TestCase):
@@ -108,7 +109,7 @@ class TestPython(CalculatorCase):
         self.assertFalse(os.access(art / "README.md", os.W_OK))
         runs = sorted((self.ws / self.cid("python") / "arrangements").glob("01-a*-seed-green"))
         self.assertTrue((runs[0] / "verify.log").is_file())
-        self.assertTrue((self.ws / self.cid("python") / "run" / "calc.py").is_file())
+        self.assertTrue((self.ws / self.cid("python") / RUN_OUT / "run" / "calc.py").is_file())
         self.assertEqual(subprocess.run(["docker", "ps", "-aq", "--filter", f"name=fae-calc-{self.cid('python')}"],
                                         capture_output=True, text=True).stdout.strip(), "")
 
