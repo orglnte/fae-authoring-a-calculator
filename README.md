@@ -12,7 +12,8 @@ You need Python 3.11+ with `typer` and `ujson`, docker, and [FAE](https://github
 cloned beside this repo (`../fae`, or set `FAE_DIR`).
 
 ```sh
-python3 cli.py experiment init       # writes fae.toml, the machine-local config
+python3 cli.py experiment init       # writes fae.toml, the machine-local config, then offers the walk
+python3 cli.py experiment check      # everything in place? (--walk: step by step, with the fixes)
 python3 cli.py experiment smoke      # one cell per language, the reference solution in place of an agent
 ```
 
